@@ -3,6 +3,8 @@ package com.remedios.victor.curso.dto;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
+
 @Entity(name = "remedios") //diz que a classe será representada em uma tabela cujo nome é "remedios" no banco de dados
 @Table(name = "Remedio") // indica que a classe será uma entidade chamada remédios no banco de dados
 @Getter //adiciona os getters pelo lombok
@@ -20,8 +22,8 @@ public class Remedio {
     @Enumerated(EnumType.STRING) // indica que o atributo é um enum e ele precisa ser mapeado pelo JPA
     private Via via;
     private String lote;
-    private String quantidade;
-    private String validade;
+    private int quantidade;
+    private LocalDate validade;
     @Enumerated(EnumType.STRING) //  indica que o atributo é um enum e ele precisa ser mapeado pelo JPA
     private Laboratorio laboratorio;
 

@@ -1,4 +1,4 @@
-package com.remedios.victor.curso.api;
+package com.remedios.victor.curso;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
