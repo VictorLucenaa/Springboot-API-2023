@@ -1,4 +1,4 @@
-package com.remedios.victor.curso.dto;
+package com.remedios.victor.curso.services;
 
 public enum Laboratorio {
 

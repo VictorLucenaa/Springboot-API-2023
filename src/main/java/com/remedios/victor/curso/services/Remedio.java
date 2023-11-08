@@ -1,5 +1,7 @@
-package com.remedios.victor.curso.dto;
+package com.remedios.victor.curso.services;
 
+import com.remedios.victor.curso.dto.DadosAtualizarRemedio;
+import com.remedios.victor.curso.dto.DadosCadastroRemedio;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -27,6 +29,8 @@ public class Remedio {
     @Enumerated(EnumType.STRING) //  indica que o atributo é um enum e ele precisa ser mapeado pelo JPA
     private Laboratorio laboratorio;
 
+    private boolean ativo;
+
     public Remedio(DadosCadastroRemedio dados) {
         this.nome = dados.nome();
         this.via = dados.via();
@@ -34,5 +38,26 @@ public class Remedio {
         this.quantidade = dados.quantidade();
         this.validade = dados.validade();
         this.laboratorio = dados.laboratorio();
+        this.ativo = true;
+    }
+
+    public void atualizarInformacoes(DadosAtualizarRemedio dados) {
+        if(dados.nome() != null){
+        this.nome = dados.nome();
+        }
+        if(dados.via() != null){
+        this.via = dados.via();
+        }
+        if(dados.laboratorio() != null){
+        this.laboratorio = dados.laboratorio();
+        }
+    }
+
+    public void inativar() {
+        this.ativo = false;
+    }
+
+    public void reativar() {
+        this.ativo = true;
     }
 }
